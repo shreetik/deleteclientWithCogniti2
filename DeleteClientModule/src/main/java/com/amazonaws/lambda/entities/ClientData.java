@@ -17,6 +17,7 @@ public class ClientData {
 	private String company_name;
 	private String phone_no;
 	private String status;
+	private String auth_code;
 	private String deleteBy;
 	private LocalDateTime time;
 	
@@ -79,6 +80,13 @@ public class ClientData {
 		this.deleteBy = deleteBy;
 	}
 	
+	@DynamoDBAttribute(attributeName = "auth_code")
+	public String getAuth_code() {
+		return auth_code;
+	}
+	public void setAuth_code(String auth_code) {
+		this.auth_code = auth_code;
+	}
 	@DynamoDBAttribute(attributeName = "time")
 	@DynamoDBTyped(DynamoDBAttributeType.S)
 	public LocalDateTime getTime() {
